@@ -1,0 +1,25 @@
+---
+title: "Lab 1"
+author: "Group 6"
+date: "January 18, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+| Name  | Handle  | Pull Requests  | Accepted Requests  | 
+|---|---|---|---|
+| Laurence Vander Werff  |  Werffl | 1  | 1  |   
+|  Allie Tucker | tuckerallie  |  1 | 1  |   
+|  Omar Taylor | acsonnall  |  1 |  1 |   
+| Joshua Limaye  | jnlimaye  |  1 | 1  |   
+
+Tips:
+1. Google things
+2. Ask people
+3. Practice
+
