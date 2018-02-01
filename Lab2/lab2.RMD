@@ -1,0 +1,24 @@
+---
+title: "Lab 2"
+author: "Isaac Tetteh"
+date: "February 1, 2018"
+output: html_document
+---
+#### Reading data 
+```{r}
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
+head(choco)
+```
+
+The total number of chocplate cars rated are 
+
+```{r}
+dim(choco)[1]
+```
+
+```{r}
+library(ggplot2)
+ggplot(data = choco, aes(x = Review.Date)) +
+  geom_bar()
+```
+
