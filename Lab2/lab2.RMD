@@ -8,7 +8,10 @@ date: "February 1, 2018"
 output: html_document
 ---
 
-## Reading data 
+## Github Repository
+https://github.com/Acesonnall/DS202X/tree/master/Lab2
+
+### Reading data 
 
 We load the information from the chocholate flabor database into our session.
 ```{r}
@@ -17,7 +20,7 @@ choco <-
   head(choco)
 ```
 
-## Finding \# of Bars Rated
+### Finding \# of Bars Rated
 
 With this data and using the the command to retrieve the dimention of an object at index 1, we find that the overall number of chocolate bars rated is 1852.
 
@@ -25,7 +28,7 @@ With this data and using the the command to retrieve the dimention of an object 
 dim(choco)[1]
 ```
 
-## Visualizing Ratings vs. Year
+### Visualizing Ratings vs. Year
 
 We can also visualize how the number of rating depends on the year with a bar chart of the number of reports.
 
@@ -36,7 +39,7 @@ ggplot(data = choco, aes(x = Review.Date)) +
   labs(title = "Number of Ratings by Year", x = "Review Date", y = "Number of Ratings")
 ```
 
-## Visualizing Ratings vs Score
+### Visualizing Ratings vs Score
 
 We can visualize how the score of the ratings are distributed.
 
@@ -46,7 +49,7 @@ ggplot(choco, aes(x = Rating)) + geom_histogram(binwidth = 0.4) + labs(title = "
 
 From the histogram above you can see that there are some outliers at about rating 5 and also almost left skewed.
 
-## Visualizing Rating Dependency of Cocoa %
+### Visualizing Rating Dependency of Cocoa %
 
 Let's see if we can visualize how much ratings depend of the coca percentage of a chocolate bar.
 
@@ -57,7 +60,7 @@ ggplot(choco, aes(x = Rating, y = Cocoa.Pct , color = Rating)) +
 
 From the scatter plot, we can see that there does not appear to be a relationship between the score value and cocoa percentage.
 
-## Visualizing Rating by Company Location
+### Visualizing Rating by Company Location
 
 Let's visualize how ratings compare across top three company locations with the most ratings.
 
@@ -71,5 +74,5 @@ ggplot(data = choco_new,
 
 From the boxplot we can see that all the countires have the same rating median. Canada has highest number in low.
 
-## Our Workflow
+### Our Workflow
 Our approach to this assignment was to start by reading the assignment overview as a group, review the deliverables, and tackle the problems together rather than dividing them up amongst each other. The reason for tackling the problems together was so that we all were able to gain experience by attempting a solution on our own. While we tackled the problems, we would share our ideas amongst the three of us and converge on a solution. After we had finished tackling the problems separately, we added further styling to our RMarkdown file and merged our work via git. we decided to utilzing git locally opposed to uploading via the web view.
