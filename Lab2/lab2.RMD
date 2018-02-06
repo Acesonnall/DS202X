@@ -1,6 +1,9 @@
 ---
 title: "Lab 2"
-author: "Isaac Tetteh"
+author: 
+- "Isaac Tetteh "
+- "Joshua Edward Zimmerman"
+- "Omar Taylor"
 date: "February 1, 2018"
 output: html_document
 ---
@@ -8,17 +11,41 @@ output: html_document
 ```{r}
 choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 head(choco)
+
 ```
 
 The total number of chocplate cars rated are 
 
 ```{r}
 dim(choco)[1]
+
 ```
 
 ```{r}
 library(ggplot2)
 ggplot(data = choco, aes(x = Review.Date)) +
   geom_bar()
+
+```
+```{r}
+ggplot(choco, aes(x = Rating)) + geom_histogram(binwidth=0.4)
+
 ```
 
+From the histogram above you can see that there are some outliers at about rating 5 and also almost left skewed.
+
+```{r}
+ggplot(choco, aes(x = Rating, y = Cocoa.Pct ,color=Rating)) + 
+  geom_point() + geom_jitter()
+```
+
+From the scatter plot, we can see that there no relationship between the rating and cocoa percentage.
+
+```{r}
+choco_new <- dplyr::filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
+ggplot(data = choco_new, aes(x = Company.Location, y = Rating, fill = Company.Location)) + 
+  geom_boxplot()
+
+```
+
+From the boxplot we can see that all the countires have the same rating median. canada has heigest number in low.
