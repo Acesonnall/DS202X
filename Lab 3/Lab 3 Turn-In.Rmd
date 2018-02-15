@@ -11,4 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 data(happy, package="productplots")
 head(happy)
+HAPPY<-readRDS("data/HAPPY.rds")
 ```
+
+```{r}
+library(tidyverse)
+HAPPY<-HAPPY %>% mutate(DEGREE=replace(DEGREE,DEGREE %in% c("NA","DK","IAP"),NA))
+HAPPY%>%ggplot(aes(x=DEGREE))+geom_bar()+coord_flip()
+```
+```{r}
+
+```
+
